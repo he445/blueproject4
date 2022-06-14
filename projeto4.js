@@ -1,7 +1,46 @@
 console.clear();
 const prompt = require("prompt-sync")();
 const game = {
-  init: "a",
+  init: function () {
+    let intro1 = `– Ouçam irmãos, hoje essa escória tenta nos desafiar. 
+  Aquele cujo os bárbaros chamam Aslog "O grande terror do leste", 
+  ousa invadir o reino élfico e pôr em risco nossa sagrada capital. 
+  Os bárbaros dizem que o exercício dele é imbatível, que não há 
+  mortal, e até mesmo, deus que possa derrotá-lo em batalha,`;
+    let intro2 = `que ele devora tudo o que encontra, mas oq eu digo é que essas são 
+  balelas de covardes que aceitaram a derrota e nem conseguiram se 
+  defender. Nós somos Elfos, os favoritos dos deuses, aqueles a quem 
+  foram confiados a magia, os garantidores da paz.`;
+    let intro3 = `Não há exército mortal ou demoníaco que não sucumba a nossa força. Hoje essa 
+  monstruosidade perecerá pelas nossas flechas,lanças e magia, 
+  hj esse "Terror" encontrará o seu fim na ponta de minha espada, 
+  e mais um conquistador bárbaro sucumbirá na fronteira de nossa 
+  sagrada capital.`;
+    let intro4 = `Arqueiros recepcione o invasor com o frio de 
+  nosso aço, magos façam as estrelas caírem e o chão se abrir, 
+  que os deuses lutem conosco. Glória aos deuses, Glória aos seus 
+  favoritos, pela vitória!
+  – Arqueiros atirar!
+  – magos formação de batalha!`;
+    let intro = function () {
+      console.log("intro");
+      function historia1() {
+        console.log(intro3);
+      }
+      setTimeout(historia1, 75);
+      setTimeout(function () {
+        console.log(intro2);
+      }, 1000);
+      setTimeout(function () {
+        console.log(intro3);
+      }, 2000);
+      setTimeout(function () {
+        console.log(intro4);
+      }, 3000);
+    };
+    console.log(intro());
+  },
+
   histArreyE: [
     ["a", "aa", "aaa"],
     ["b", "bb", "bbb"],
@@ -25,14 +64,15 @@ const game = {
     console.log(resp);
     return resp;
   },
-  hist: function (difficult) {
+  hist: function () {
+    this.init();
     let score = 0;
     let mistE = Math.floor(Math.random() * 3);
     let mistM = Math.floor(Math.random() * 3);
     let mistH = Math.floor(Math.random() * 3);
     for (let i = 0; i < 5; i++) {
       console.log("turnos", i);
-      difficult = Math.floor(Math.random() * 3);
+      let difficult = Math.floor(Math.random() * 3);
       console.log("dificuldade", difficult);
       if (difficult == 0) {
         if (mistE == 0) {
@@ -125,4 +165,5 @@ const game = {
     }
   },
 };
+
 game.hist();
