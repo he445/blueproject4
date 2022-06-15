@@ -39,19 +39,44 @@ const game = {
     };
     console.log(intro());
   },
-
-  histArreyE: [
-    ["a", "aa", "aaa"],
-    ["b", "bb", "bbb"],
-    ["c", "cc", "ccc"],
-  ],
-  histArreyM: [
-    ["a1", "aa1", "aaa1"],
-    ["b1", "bb1", "bbb1"],
-    ["c1", "cc1", "ccc1"],
-  ],
-  histArreyH: [
-    ["a2", "aa2", "aaa2"],
+  histArrey: [
+    [
+      `Andando pelo deserto você encontra um local com a marca dos deuses, você sabe que ali é um 
+    local de devoção, seu povo vê aquilo como uma possibilidade de agradar aos deuses e sugerem uma 
+    oferenda. Nessa situação você 1.faz a oferenda. 2 n faz a oferenda`, //0
+      `logo quando você termina a 
+    oferenda vocês sentem um tremor de terra do meio das dunas surge um verme gigante com 
+    tantos dentes quanto as pode contar e com o tamanho que escurece o ambiente. 
+    Você então decide 1 enfrentar o monstro. 2. Tentar capturar o Vermum baseado nas antigas 
+    histórias de cavaleiros de duna 3. Recuar.`, //1
+      ` O Vermum investe contra seu povo, você rapidamente ordena a 
+    parede de escudos com lanças atrás, a parede aguenta bem a primeira investida do monstro e 
+    logo em seguida ele é transpassado por flechas de seus arqueiros. O monstro fica mais furioso e 
+    novamente faz seu ataque porém antes que ele alcance a sua defesa preparada para o impacto uma 
+    nova saraivada finaliza a criatura. (+20 de comida e mais +10 de moral)`, //2
+      ` o monstro é assustador você 
+    demora a tomar a decisão do que fazer, as suas tropas vendo a sua indecisão acaba agindo por 
+    contra própria, e isso foi crucial. O Vermum faz seus ataques e com uma bocada ele mata vários de 
+    seus guerreiros, vendo isso você ordena a retirada, muitos dos que te acompanhavam morrem na 
+    confusão mas você se livra da criatura, o seu povo vê isso como uma comprovação que os deus estão 
+    zangados e que essa é sua punição. (-10 de moral)`, //3
+      `você se lembra das antigas histórias de cavaleiros místicos 
+    do deserto que cavalgavam vermes pelas dunas você ordena a formação de batalha na investida da 
+    criatura você avança pelo flanco e a escala com a ajuda de sua lâmina, a criatura pula e se 
+    contorce na tentativa de se livrar da sua presença, mas você cumpre a sua missão escala o topo 
+    da fera no topo você fere mortalmente a criatura. (+30 de comida e +20 de felicidade).`, //4
+      ` você se lembra das antigas 
+    histórias de cavaleiros místicos do deserto que cavalgavam vermes pelas dunas você ordena a formação 
+    de batalha na investida da criatura você avança pelo flanco e a escala com a ajuda de sua lâmina, 
+    a criatura se debate e vc é arremessado com muita força contra a parede, você acorda um tempo 
+    depois em um acampamento, muitos morreram e quase não conseguiram escapar do Vermum. 
+    "É quem diria que conto de fadas são só conto de fadas". (-20 de moral)`, //5
+      ` você ordena a retirada, 
+    por ser cedo todos conseguem escapar da situação, mas você se pergunta e se você tivesse 
+    tentado montar na criatura?`, //6
+      `você avalia a situação e percebe que não vale a pena fazer a ofernda, seu povo não entende a sua opção 
+    e reforça a ideia que você é um herege(-10 de felicidade)`,
+    ],
     ["b2", "bb2", "bbb2"],
     ["c2", "cc2", "ccc2"],
   ],
@@ -65,99 +90,61 @@ const game = {
   },
   hist: function hist() {
     let score = 0;
-    let mistE = Math.floor(Math.random() * 3);
-    let mistM = Math.floor(Math.random() * 3);
-    let mistH = Math.floor(Math.random() * 3);
-    for (let i = 0; i < 5; i++) {
-      console.log("turnos", i);
-      let difficult = Math.floor(Math.random() * 3);
-      console.log("dificuldade", difficult);
-      if (difficult == 0) {
-        if (mistE == 0) {
-          console.log(this.histArreyE[0][0]), (hist = prompt());
-          let resp = this.dado();
-          if (hist == 1 && resp >= 5) {
-            console.log(this.histArreyE[0][1]), (hist = prompt());
-            score++;
-          }
-        }
-        if (mistE == 1) {
-          console.log(this.histArreyE[1][0]), (hist = prompt());
-          let resp = this.dado();
-          if (hist == 1 && resp >= 5) {
-            console.log(this.histArreyE[1][1]), (hist = prompt());
-            score++;
-          }
-        }
-        if (mistE == 2) {
-          console.log(this.histArreyE[2][0]), (hist = prompt());
-          let resp = this.dado();
-          if (hist == 1 && resp >= 5) {
-            console.log(this.histArreyE[2][1]), (hist = prompt());
-            score++;
-          }
-        }
-      }
+    let mist = Math.floor(Math.random() * 1);
 
-      if (difficult == 1) {
-        if (mistM == 0) {
-          console.log(this.histArreyM[0][0]), (hist = prompt());
-          let resp = this.dado();
-          if (hist == 1 && resp >= 10) {
-            console.log(this.histArreyM[0][1]), score++;
-          } else {
-            console.log("falhou");
+    for (let i = 0; i < 5; i++) {
+      let histout;
+      let histin;
+      console.log("turnos", i);
+
+      if (mist == 0) {
+        console.log(this.histArrey[0][0]), (histout = prompt());
+
+        if (histout == 1) {
+          console.log(this.histArrey[0][1]),
+            (histin = prompt()),
+            this.dado(),
+            (resp = this.dado());
+
+          if (histin == 1 && resp > 12) {
+            console.log(this.histArrey[0][2]);
+          }
+          if (histin == 1 && resp < 12) {
+            console.log(this.histArrey[0][3]);
+          }
+          if (histin == 2 && resp > 15) {
+            console.log(this.histArrey[0][4]);
+          }
+          if (histin == 2 && resp < 15) {
+            console.log(this.histArrey[0][5]);
+          }
+
+          if (histin == 3) {
+            console.log(this.histArrey[0][6]);
           }
         }
-        if (mistM == 1) {
-          console.log(this.histArreyM[1][0]), (hist = prompt());
-          let resp = this.dado();
-          if (hist == 1 && resp >= 10) {
-            console.log(this.histArreyM[1][1]), score++;
-          } else {
-            console.log("falhou");
-          }
-        }
-        if (mistM == 2) {
-          console.log(this.histArreyM[2][0]), (hist = prompt());
-          let resp = this.dado();
-          if (hist == 1 && resp >= 10) {
-            console.log(this.histArreyM[2][1]), score++;
-          } else {
-            console.log("falhou");
-          }
+        if (histin == 1) {
+          console.log(this.histArrey[0][7]);
         }
       }
-      if (difficult == 2) {
-        if (mistH == 0) {
-          console.log(this.histArreyH[0][0]), (hist = prompt());
-          let resp = this.dado();
-          if (hist == 1 && resp >= 15) {
-            console.log(this.histArreyH[0][1]);
-            score++;
-          } else {
-            console.log("falhou");
-          }
+      if (mist == 1) {
+        console.log(this.histArrey[1][0]), (hist = prompt());
+        let resp = this.dado();
+        if (hist == 1 && resp >= 15) {
+          console.log(this.histArrey[1][1]);
+          score++;
+        } else {
+          console.log("falhou");
         }
-        if (mistH == 1) {
-          console.log(this.histArreyH[1][0]), (hist = prompt());
-          let resp = this.dado();
-          if (hist == 1 && resp >= 15) {
-            console.log(this.histArreyH[1][1]);
-            score++;
-          } else {
-            console.log("falhou");
-          }
-        }
-        if (mistH == 2) {
-          console.log(this.histArreyH[2][0]), (hist = prompt());
-          let resp = this.dado();
-          if (hist == 1 && resp >= 15) {
-            console.log(this.histArreyH[2][1]);
-            score++;
-          } else {
-            console.log("falhou");
-          }
+      }
+      if (mist == 2) {
+        console.log(this.histArrey[2][0]), (hist = prompt());
+        let resp = this.dado();
+        if (hist == 1 && resp >= 15) {
+          console.log(this.histArrey[2][1]);
+          score++;
+        } else {
+          console.log("falhou");
         }
       }
     }
