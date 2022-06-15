@@ -77,7 +77,26 @@ const game = {
       `você avalia a situação e percebe que não vale a pena fazer a ofernda, seu povo não entende a sua opção 
     e reforça a ideia que você é um herege(-10 de felicidade)`,
     ],
-    ["b2", "bb2", "bbb2"],
+    [
+      ` você lança uma expedição de reconhecimento, o mapa mostra que em alguns quilômetros haveria um 
+    oásis, um grupo menor conseguiria identificar possíveis perigos na região. 
+    Depois de algum tempo a expedição diz que encontrou o oásis que é está cheio de árvores 
+    frondosas e animais, além de água, nenhum perigo parece cercar o local. Você então: 1 ordena o 
+    deslocamento até o local. 2. Você ignora o reporte e continua o caminhar desviando do oásis`, //0
+      `você leva o seu povo ao oásis, as crianças pulam no lago e os adultos se refrescam nas sombras 
+    das árvores altas. Ninguém, no entanto, reconhece as frutas, por isso  receio de comer-las 
+    existe. Então você 1 ordena que os experimentadores reais provem as frutas.2. ordena para que se 
+    abastecem das frutas isso é claramente um presente dos deuses. `, //1
+      `seus provadores aprovam as frutas elas são deliciosas e matam muito da sede. 
+    (+10 de comida + 5 de moral)`, //2
+      `seu povo prova as frutas elas são deliciosas e matam muito da sede. (+10 de comida + 5 de moral)
+    `, //3
+      ` as frutas apodrecem extremamente rápido e contamina algumas das suas provisões, 
+    foi uma tarde refrescante, mas esse refresco teve seu custo. (-7 de comida +3 de felicidade)`, //4
+      ` a sua população nunca soube do oásis, nem você sabe o que teria acontecido lá, 
+    mas você se lembra do seu pai " o seguro morreu de velho meu filho", 
+    " mas o ousado morreu mais rico" completa sua mãe.`, //5
+    ],
     ["c2", "cc2", "ccc2"],
   ],
   haguer: 60,
@@ -90,7 +109,7 @@ const game = {
   },
   hist: function hist() {
     let score = 0;
-    let mist = Math.floor(Math.random() * 1);
+    let mist = Math.floor(Math.random() * 2);
 
     for (let i = 0; i < 5; i++) {
       let histout;
@@ -128,13 +147,23 @@ const game = {
         }
       }
       if (mist == 1) {
-        console.log(this.histArrey[1][0]), (hist = prompt());
-        let resp = this.dado();
-        if (hist == 1 && resp >= 15) {
+        console.log(this.histArrey[1][0]), (histout = prompt());
+
+        if (histout == 1) {
           console.log(this.histArrey[1][1]);
-          score++;
-        } else {
-          console.log("falhou");
+          (histin = prompt()), this.dado(), (resp = this.dado());
+
+          if (histin == 1) {
+            console.log(this.histArrey[1][2]);
+          }
+          if (histin == 2 && resp > 6) {
+            console.log(this.histArrey[1][3]);
+            if (histin == 2 && resp < 6) {
+              console.log(this.histArrey[1][4]);
+            }
+          }
+        }
+        if (histout == 2) {
         }
       }
       if (mist == 2) {
