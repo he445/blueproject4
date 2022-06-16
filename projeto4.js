@@ -99,7 +99,7 @@ const game = {
     ],
     ["c2", "cc2", "ccc2"],
   ],
-  haguer: 60,
+  food: 60,
   moral: 60,
   happynes: 60,
   dado: function () {
@@ -115,6 +115,9 @@ const game = {
       let histout;
       let histin;
       console.log("turnos", i);
+      console.log(
+        `Sua comida ${this.food}, sua felicidadade ${this.happynes}, sua moral ${this.moral}.`
+      );
 
       if (mist == 0) {
         console.log(this.histArrey[0][0]), (histout = prompt());
@@ -127,15 +130,18 @@ const game = {
 
           if (histin == 1 && resp > 12) {
             console.log(this.histArrey[0][2]);
+            this.food + 20, this.happynes + 10;
           }
           if (histin == 1 && resp < 12) {
-            console.log(this.histArrey[0][3]);
+            console.log(this.histArrey[0][3]), this.moral - 10;
           }
           if (histin == 2 && resp > 15) {
             console.log(this.histArrey[0][4]);
+            this.food + 30, this.happynes + 20;
           }
           if (histin == 2 && resp < 15) {
             console.log(this.histArrey[0][5]);
+            this.moral - 20;
           }
 
           if (histin == 3) {
@@ -144,6 +150,7 @@ const game = {
         }
         if (histin == 1) {
           console.log(this.histArrey[0][7]);
+          this.happynes - 10;
         }
       }
       if (mist == 1) {
@@ -155,15 +162,19 @@ const game = {
 
           if (histin == 1) {
             console.log(this.histArrey[1][2]);
+            this.food + 10, this.happynes + 5;
           }
           if (histin == 2 && resp > 6) {
             console.log(this.histArrey[1][3]);
-            if (histin == 2 && resp < 6) {
-              console.log(this.histArrey[1][4]);
-            }
+            this.food + 10, this.happynes + 5;
+          }
+          if (histin == 2 && resp < 6) {
+            console.log(this.histArrey[1][4]);
+            this.food - 7, this.happynes + 1;
           }
         }
         if (histout == 2) {
+          console.log(this.histArrey[1][5]);
         }
       }
       if (mist == 2) {
