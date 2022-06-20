@@ -2,28 +2,17 @@ console.clear();
 const prompt = require("prompt-sync")();
 const game = {
   init: function () {
-    let intro1 = `– Ouçam irmãos, hoje essa escória tenta nos desafiar.  
-    Aquele cujo os bárbaros chamam Aslog "O grande terror do leste",  
-    ousa invadir o reino élfico e pôr em risco nossa sagrada capital.  
-    Os bárbaros dizem que o exercício dele é imbatível, que não há  
-    mortal, e até mesmo, deus que possa derrotá-lo em batalha,`;
-    let intro2 = `que ele devora tudo o que encontra, mas oq eu digo é que essas são  
-    balelas de covardes que aceitaram a derrota e nem conseguiram se  
-    defender. Nós somos Elfos, os favoritos dos deuses, aqueles a quem  
-    foram confiados a magia, os garantidores da paz.`;
-    let intro3 = `Não há exército mortal ou demoníaco que não sucumba a nossa força. Hoje essa  
-    monstruosidade perecerá pelas nossas flechas,lanças e magia,  
-    hj esse "Terror" encontrará o seu fim na ponta de minha espada,  
-    e mais um conquistador bárbaro sucumbirá na fronteira de nossa  
-    sagrada capital.`;
-    let intro4 = `Arqueiros recepcione o invasor com o frio de  
-    nosso aço, magos façam as estrelas caírem e o chão se abrir,  
-    que os deuses lutem conosco. Glória aos deuses, Glória aos seus  
-    favoritos, pela vitória! 
-    – Arqueiros atirar! 
-    – magos formação de batalha!`;
+    let intro1 = `– Mas Camarada Chuĭkov eles tem mais de duzentos mil alemães, os batalhões de 
+    panzer que derrubaram as tropas francesas e a força aérea que está massacrando nossa divisão. 
+    A opção mais correta seria recuar e formar uma linha defensiva do outro lado do rio Volga, ali 
+    seus soldados e panzers seriam ineficazes contra nossas forças. Ali faremos um muro que nem a 
+    Wehrmacht seria capaz de ultrapassar.`;
+    let intro2 = `– Camarada, as ordens são claras “defender Stalingrado ou morrer tentando”, 
+    iremos cumprir essa ordem com excelência e nenhum facista atravessará o Volga vivo.`;
+    let intro3 = `– Mas Chuĭkov n...`;
+    let intro4 = `Sem “mas” camarada, sem “mas”, preparem as tropas, a ordem foi clara. 
+    Stalingrado será o cemitério do tirano.`;
     let intro = function () {
-      console.log("intro");
       setTimeout(function () {
         console.log(intro1);
       }, 75);
@@ -35,47 +24,41 @@ const game = {
       }, 2000);
       setTimeout(function () {
         console.log(intro4);
-      }, 3000);
+      }, 200);
     };
     console.log(intro());
   },
   histArrey: [
     [
-      `Andando pelo deserto você encontra um local com a marca dos deuses, você sabe que ali é um 
-    local de devoção, seu povo vê aquilo como uma possibilidade de agradar aos deuses e sugerem uma 
-    oferenda. Nessa situação você 1.faz a oferenda. 2 n faz a oferenda`, //0
-      `logo quando você termina a 
-    oferenda vocês sentem um tremor de terra do meio das dunas surge um verme gigante com 
-    tantos dentes quanto as pode contar e com o tamanho que escurece o ambiente. 
-    Você então decide 1 enfrentar o monstro. 2. Tentar capturar o Vermum baseado nas antigas 
-    histórias de cavaleiros de duna 3. Recuar.`, //1
-      ` O Vermum investe contra seu povo, você rapidamente ordena a 
-    parede de escudos com lanças atrás, a parede aguenta bem a primeira investida do monstro e 
-    logo em seguida ele é transpassado por flechas de seus arqueiros. O monstro fica mais furioso e 
-    novamente faz seu ataque porém antes que ele alcance a sua defesa preparada para o impacto uma 
-    nova saraivada finaliza a criatura. (+20 de comida e mais +10 de moral)`, //2
-      ` o monstro é assustador você 
-    demora a tomar a decisão do que fazer, as suas tropas vendo a sua indecisão acaba agindo por 
-    contra própria, e isso foi crucial. O Vermum faz seus ataques e com uma bocada ele mata vários de 
-    seus guerreiros, vendo isso você ordena a retirada, muitos dos que te acompanhavam morrem na 
-    confusão mas você se livra da criatura, o seu povo vê isso como uma comprovação que os deus estão 
-    zangados e que essa é sua punição. (-10 de moral)`, //3
-      `você se lembra das antigas histórias de cavaleiros místicos 
-    do deserto que cavalgavam vermes pelas dunas você ordena a formação de batalha na investida da 
-    criatura você avança pelo flanco e a escala com a ajuda de sua lâmina, a criatura pula e se 
-    contorce na tentativa de se livrar da sua presença, mas você cumpre a sua missão escala o topo 
-    da fera no topo você fere mortalmente a criatura. (+30 de comida e +20 de felicidade).`, //4
-      ` você se lembra das antigas 
-    histórias de cavaleiros místicos do deserto que cavalgavam vermes pelas dunas você ordena a formação 
-    de batalha na investida da criatura você avança pelo flanco e a escala com a ajuda de sua lâmina, 
-    a criatura se debate e vc é arremessado com muita força contra a parede, você acorda um tempo 
-    depois em um acampamento, muitos morreram e quase não conseguiram escapar do Vermum. 
-    "É quem diria que conto de fadas são só conto de fadas". (-20 de moral)`, //5
-      ` você ordena a retirada, 
-    por ser cedo todos conseguem escapar da situação, mas você se pergunta e se você tivesse 
-    tentado montar na criatura?`, //6
-      `você avalia a situação e percebe que não vale a pena fazer a ofernda, seu povo não entende a sua opção 
-    e reforça a ideia que você é um herege(-10 de felicidade)`,
+      `– Avante, avante camaradas. 
+      – cuidado com o flanco
+      – Facista abatido.
+      – Camaradas a missão é bem simples: tomar a residência nas coordenadas  48.71787, 44.513. Mechan-se. 
+      O edifício tem sido uma pedra no sapato dos esforços soviéticos, a tomada desse edifício é 
+      crucial para a retomada do setor. O esquadrão do Sargento Semyonovich é escolhido para a missão. 
+      A casa está cercada por minas, atiradoras de elite e metralhadoras. 
+      Você então decide 1. atacar a distância os atiradores de elite 
+      2. avançar e encurtar a distância para fazer um assalto rápido. 
+      3. lançar fogo  de supressão enquanto avança para tomar a casa.`, //0
+      `– atiradoras mirrem nos atiradores de precisão deles.`, //1
+      ` –Camarada fascistas mortos`, //2
+      ` Malditos, não temos visão senhor e eles estão em terreno elevado, estão nos caçando como moscas.`, //3
+      `2. avançar e encurtar a distância para fazer um assalto rápido. 
+      3. lançar fogo  de supressão enquanto avança para tomar a casa.`, //4
+      ` PELA PÁTRIA MÃE, UUUUURRRRAAA! AVANCEM, AVANCEM!`, //5
+      ` Camarada 1. estabelecemos o perímetro ou  2.invadimos a casa `, //6
+      `perímetro estabelecido Camarada, não tem risco de inimigos pela costa Camarada. 2. - Avante pela casa!`, //7
+      `- Avante pela casa!`, //8
+      ` primeiro andar tomado, 1 para o segundo as baionetas 2 para o segundo lance as granadas e 
+    pescamos os desgraçados na fulga.`, //9
+      `– Explosão de granadas, tiros e gritos de desespero, gorgolejar de sangue. 
+    Haha veja como os fascistas morrem, como ratos saindo da toca. (O reforço soviétivo está se preparando!)`, //10
+      `Capitão ninguém sobreviveu do esquadrão do Sargento Semyonovich
+    Avisem a família, muitos de nós morreram, mas sobreviveremos. (A ofensiva Alemã ganha força!)`, //11
+      `distraiam a escória com a metralhadora.`, //12
+      `1. atacar a distância os 
+      atiradores de elite 2. avançar e encurtar a distância para fazer um assalto rápido. `, //13
+      `Morra facista. senhor esse foi o último. Sucesso casa tomada (O reforço soviétivo está se preparando!)`, //14
     ],
     [
       ` você lança uma expedição de reconhecimento, o mapa mostra que em alguns quilômetros haveria um 
@@ -99,61 +82,114 @@ const game = {
     ],
     ["c2", "cc2", "ccc2"],
   ],
-  food: 60,
-  moral: 60,
-  happynes: 60,
+  mist: function () {
+    var numeros = [];
+    while (numeros.length < 3) {
+      var aleatorio = Math.floor(Math.random() * 3);
+
+      if (numeros.indexOf(aleatorio) == -1) numeros.push(aleatorio);
+    }
+    return numeros[0];
+  },
+
   dado: function () {
     resp = Math.floor(21 * Math.random());
     console.log(resp);
     return resp;
   },
   hist: function hist() {
-    let score = 0;
-    let mist = Math.floor(Math.random() * 2);
+    let scoreGer = 10;
+    let scoreSU = 10;
+    console.log(`O reforso Soviético esta há ${scoreSU} de distancia`);
+    console.log(`O reforso Soviético esta há ${scoreGer} de distancia`);
 
-    for (let i = 0; i < 5; i++) {
+    console.log();
+
+    for (let i = 0; i < 3; i++) {
       let histout;
       let histin;
+      let histin1;
       console.log("turnos", i);
-      console.log(
-        `Sua comida ${this.food}, sua felicidadade ${this.happynes}, sua moral ${this.moral}.`
-      );
+      console.log(`O reforso Soviético esta há ${scoreSU} de distancia`);
+      console.log(`O reforso Soviético esta há ${scoreGer} de distancia`);
 
-      if (mist == 0) {
+      console.log(this.mist());
+      if (this.mist() == 0) {
         console.log(this.histArrey[0][0]), (histout = prompt());
 
         if (histout == 1) {
-          console.log(this.histArrey[0][1]),
-            (histin = prompt()),
-            this.dado(),
-            (resp = this.dado());
+          console.log(this.histArrey[0][1]), this.dado(), (resp = this.dado());
+          console.log(resp);
 
-          if (histin == 1 && resp > 12) {
+          if (histout == 1 && resp >= 8) {
             console.log(this.histArrey[0][2]);
-            this.food + 20, this.happynes + 10;
+            console.log(this.histArrey[0][4]), (histout = prompt());
+            console.log("a", histout);
           }
-          if (histin == 1 && resp < 12) {
-            console.log(this.histArrey[0][3]), this.moral - 10;
-          }
-          if (histin == 2 && resp > 15) {
-            console.log(this.histArrey[0][4]);
-            this.food + 30, this.happynes + 20;
-          }
-          if (histin == 2 && resp < 15) {
-            console.log(this.histArrey[0][5]);
-            this.moral - 20;
-          }
-
-          if (histin == 3) {
-            console.log(this.histArrey[0][6]);
+          if (histout == 1 && resp < 8) {
+            console.log(this.histArrey[0][3]),
+              console.log(this.histArrey[0][4]),
+              (histout2 = prompt());
+            console.log("a", histout);
           }
         }
-        if (histin == 1) {
-          console.log(this.histArrey[0][7]);
-          this.happynes - 10;
+        if (histout == 2) {
+          console.log(this.histArrey[0][5]), this.dado(), (resp = this.dado());
+
+          if (histout == 2 && resp > 10) {
+            console.log(this.histArrey[0][6]);
+            histin = prompt();
+            if (histin == 1) {
+              console.log(this.histArrey[0][7]), (bonus = 2);
+              histin = prompt();
+            } else {
+              bonus = 0;
+            }
+            if (histin == 2 && bonus == 2) {
+              coconsole.log(this.histArrey[0][8]), (resp = this.dado());
+              buff = resp + bonus;
+              console.log(buff), (histin = prompt());
+              if (buff >= 10) {
+                console.log(this.histArrey[0][8]), (histin1 = prompt());
+                resp = this.dado();
+              } else if (buff <= 10) {
+                console.log(this.histArrey[0][11]);
+                scoreGer--;
+              }
+            }
+            if (histin == 2 && bonus != 2) {
+              coconsole.log(this.histArrey[0][8]), (resp = this.dado());
+              console.log(resp);
+              if (resp >= 10) {
+                coconsole.log(this.histArrey[0][8]), (histin1 = prompt());
+                resp = this.dado();
+              } else if (resp <= 10) {
+                coconsole.log(this.histArrey[0][11]);
+                scoreGer--;
+              }
+            }
+          }
+          if (histin1 == 1 && rep >= 10) {
+            coconsole.log(this.histArrey[0][14]);
+            scoreSU--;
+          }
+          if (histin1 == 1 && rep < 10) {
+            coconsole.log(this.histArrey[0][11]);
+            scoreGer--;
+          }
+          if (histout == 2 && resp < 10) {
+            console.log(this.histArrey[0][11]);
+            scoreGer--;
+          }
+        }
+
+        if (histout == 3) {
+          console.log(this.histArrey[0][6]);
+          histout = prompt();
         }
       }
-      if (mist == 1) {
+
+      if (this.mist() == 1) {
         console.log(this.histArrey[1][0]), (histout = prompt());
 
         if (histout == 1) {
@@ -177,12 +213,11 @@ const game = {
           console.log(this.histArrey[1][5]);
         }
       }
-      if (mist == 2) {
+      if (this.mist() == 2) {
         console.log(this.histArrey[2][0]), (hist = prompt());
         let resp = this.dado();
         if (hist == 1 && resp >= 15) {
           console.log(this.histArrey[2][1]);
-          score++;
         } else {
           console.log("falhou");
         }
@@ -194,4 +229,4 @@ const game = {
 game.init();
 setTimeout(function () {
   game.hist();
-}, 7000);
+}, 3500);
