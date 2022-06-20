@@ -180,6 +180,29 @@ Panzers à vista. 1 mantenham a infantaria em cheque. 2. Fogo dos morteiros`, //
       `Parabéns cabo Ivanovich excelente trabalho (O reforço soviétivo está se preparando!)`, //10
       `resistam, resistam (A ofensiva Alemã ganha força!) `,
     ],
+    [
+      `– Panzers!
+    - Sua vez Camarada Khachin! 
+    – Sim camarada! preparar a recepção desses canalhas
+    –Tiger se aproximando à esquerda, Panzer II A direita.
+    1 Elimine os Tigers 2 Fogo nos panzers
+    `, //0
+      `Senhor kummunist atirando em nós !
+    – mirem neles `, //1
+      `Camarada fogo inimig… ahh!
+    – Soldado!
+    Camarada perdemos metade do escudo 
+    1 continuem com o fogo! 2 Recuar!`, //2
+      `Senhor, destruímos metade da arma e matamos  2 kummunists na tripulação! Fogo!`, //3
+      `Camarada fogo inimigo!
+    Camarada, a arma está quase destruída
+    1 Quase soldado mantenha o fogo, mataremos esses Fascistas hoje! 2 Recuar`, //4
+      `Senhor os kummunists destruíram 3 dos nossos Tigers malditos, destruam!`, //5
+      `Camarada sistemas de mira destruidos! 1 só mais um tiro! 2 Recuar`, //6
+      `(A ofensiva Alemã ganha força!)`, //7
+      `(O reforço soviétivo está se preparando!)`, //8
+      `Veículos desabilitados 2 A vez é dos Tigers`,
+    ],
   ],
   dado: function () {
     resp = Math.floor(21 * Math.random());
@@ -197,14 +220,14 @@ Panzers à vista. 1 mantenham a infantaria em cheque. 2. Fogo dos morteiros`, //
     next = prompt();
     console.log();
 
-    let scoreGer = 10;
-    let scoreSU = 10;
+    let scoreGer = 8;
+    let scoreSU = 8;
     console.log(`O reforso Soviético esta há ${scoreSU} de distancia`);
     console.log(`O reforso Soviético esta há ${scoreGer} de distancia`);
 
     console.log();
 
-    for (let i = 0; i < 3; ) {
+    for (let i = 0; i < 8; ) {
       let histout;
       let histin;
       let histin1;
@@ -961,6 +984,59 @@ Panzers à vista. 1 mantenham a infantaria em cheque. 2. Fogo dos morteiros`, //
             }
           }
         }
+      }
+      while (i == 6) {
+        console.log(
+          `O reforso Soviético esta há ${scoreSU} meses de distancia`
+        );
+        console.log(`O reforso Alemão esta há ${scoreGer} meses de distancia`);
+
+        console.log(this.histArrey[6][0]), (histout = prompt());
+        if (histout == 1) {
+          console.log(this.histArrey[6][1]);
+          console.log(this.histArrey[6][2]), (histin = prompt());
+          if (histin == 1) {
+            console.log(this.histArrey[6][3]), (histin1 = prompt());
+          } else {
+            console.log(this.histArrey[6][7]);
+            scoreGer--, i++;
+          }
+          if (histin1 == 1) {
+            console.log(this.histArrey[6][4]), (histin2 = prompt());
+          } else {
+            console.log(this.histArrey[6][7]);
+            scoreGer--, i++;
+          }
+          if (histin2 == 1) {
+            console.log(this.histArrey[6][5]), (histin3 = prompt());
+          } else {
+            console.log(this.histArrey[6][7]);
+            scoreGer--, i++;
+          }
+          if (histin3 == 1) {
+            console.log(this.histArrey[6][6]),
+              (histin2 = prompt()),
+              console.log(this.histArrey[6][7]);
+            scoreSU--, i++;
+          } else {
+            console.log(this.histArrey[6][7]);
+            scoreGer--, i++;
+          }
+        }
+        if (histout == 2) {
+          console.log(this.histArrey[6][9])((histout = prompt()));
+        }
+      }
+      if (scoreGer == 1) {
+        console.log(`Stalingrado caiu nas maõs do Eixo, quem sabe o que será da cidade e 
+      do mundo agora?`),
+          i++;
+      }
+      if (scoreSU == 1) {
+        console.log(
+          `Vitória!! Agora perseguiremos esses canalhas até Berlin UUUURRRRAAAAA!!`
+        ),
+          i++;
       }
     }
   },
