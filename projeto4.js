@@ -609,6 +609,16 @@ Panzers à vista. 1 mantenham a infantaria em cheque. 2. Fogo dos morteiros`, //
           if (respUS < bonus) {
             scoreinGer++;
           }
+          if (scoreinGer > scoreinUs) {
+            console.log(this.histArrey[3][7]);
+            scoreGer--;
+            i++;
+          }
+          if (scoreinUs > scoreinGer) {
+            console.log(this.histArrey[3][8]);
+            scoreSU--;
+            i++;
+          }
         }
 
         if (histout2 == 2) {
@@ -622,6 +632,16 @@ Panzers à vista. 1 mantenham a infantaria em cheque. 2. Fogo dos morteiros`, //
           }
           if (respUS < bonus) {
             scoreinGer++;
+          }
+          if (scoreinGer > scoreinUs) {
+            console.log(this.histArrey[3][7]);
+            scoreGer--;
+            i++;
+          }
+          if (scoreinUs > scoreinGer) {
+            console.log(this.histArrey[3][8]);
+            scoreSU--;
+            i++;
           }
         }
 
@@ -756,14 +776,13 @@ Panzers à vista. 1 mantenham a infantaria em cheque. 2. Fogo dos morteiros`, //
             if (respUS < bonus) {
               scoreinGer++;
             }
-            if (scoreinGer == 3) {
+            if (scoreinGer > scoreinUs) {
               console.log(this.histArrey[4][10]);
-
               scoreGer--;
               i++;
-            } else {
+            }
+            if (scoreinUs > scoreinGer) {
               console.log(this.histArrey[4][11]);
-
               scoreSU--;
               i++;
             }
@@ -909,14 +928,13 @@ Panzers à vista. 1 mantenham a infantaria em cheque. 2. Fogo dos morteiros`, //
             if (respUS < bonus) {
               scoreinGer++;
             }
-            if (scoreinGer == 3) {
+            if (scoreinGer > scoreinUs) {
               console.log(this.histArrey[5][10]);
-
               scoreGer--;
               i++;
-            } else {
+            }
+            if (scoreinUs > scoreinGer) {
               console.log(this.histArrey[5][11]);
-
               scoreSU--;
               i++;
             }
