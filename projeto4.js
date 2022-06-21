@@ -220,14 +220,14 @@ Panzers à vista. 1 mantenham a infantaria em cheque. 2. Fogo dos morteiros`, //
     next = prompt();
     console.log();
 
-    let scoreGer = 8;
-    let scoreSU = 8;
+    let scoreGer = 7;
+    let scoreSU = 7;
     console.log(`O reforso Soviético esta há ${scoreSU} de distancia`);
     console.log(`O reforso Soviético esta há ${scoreGer} de distancia`);
 
     console.log();
 
-    for (let i = 0; i < 8; ) {
+    for (let i = 0; i < 7; ) {
       let histout;
       let histin;
       let histin1;
@@ -235,95 +235,7 @@ Panzers à vista. 1 mantenham a infantaria em cheque. 2. Fogo dos morteiros`, //
       console.log(`O reforso Soviético esta há ${scoreSU} de distancia`);
       console.log(`O reforso Soviético esta há ${scoreGer} de distancia`);
 
-      if (i == 0) {
-        console.log(this.histArrey[0][0]), (histout = prompt());
-
-        if (histout == 1) {
-          console.log(this.histArrey[0][1]), this.dado(), (resp = this.dado());
-          console.log(resp);
-
-          if (histout == 1 && resp >= 8) {
-            console.log(this.histArrey[0][2]);
-            console.log(this.histArrey[0][4]), (histout = prompt());
-            console.log("a", histout);
-          }
-          if (histout == 1 && resp < 8) {
-            console.log(this.histArrey[0][3]),
-              console.log(this.histArrey[0][4]),
-              (histout = prompt());
-          }
-        }
-        if (histout == 2) {
-          console.log(this.histArrey[0][5]), this.dado(), (resp = this.dado());
-
-          if (histout == 2 && resp > 10) {
-            console.log(this.histArrey[0][6]);
-            histin = prompt();
-            if (histin == 1) {
-              console.log(this.histArrey[0][7]), (bonus = 2);
-              histin = prompt();
-            } else {
-              bonus = 0;
-            }
-            if (histin == 2 && bonus == 2) {
-              console.log(this.histArrey[0][8]), (resp = this.dado());
-              buff = resp + bonus;
-              console.log(buff), (histin = prompt());
-              if (buff >= 10) {
-                console.log(this.histArrey[0][8]), (histin1 = prompt());
-                resp = this.dado();
-              } else if (buff <= 10) {
-                console.log(this.histArrey[0][11]);
-                scoreGer--;
-                i++;
-              }
-            }
-            if (histin == 2 && bonus != 2) {
-              console.log(this.histArrey[0][8]), (resp = this.dado());
-              console.log(resp);
-              if (resp >= 10) {
-                console.log(this.histArrey[0][9]), (histin1 = prompt());
-                resp = this.dado();
-              } else if (resp <= 10) {
-                console.log(this.histArrey[0][11]);
-                scoreGer--;
-                i++;
-              }
-            }
-          }
-          if (histin1 == 1 && resp >= 10) {
-            console.log(this.histArrey[0][14]);
-            scoreSU--;
-          }
-          if (histin1 == 1 && resp < 10) {
-            console.log(this.histArrey[0][11]);
-            scoreGer--;
-            i++;
-          }
-          if (histin1 == 2 && resp >= 10) {
-            console.log(this.histArrey[0][14]);
-            scoreSU--;
-            i++;
-          }
-          if (histin1 == 2 && resp < 10) {
-            console.log(this.histArrey[0][11]);
-            scoreGer--;
-            i++;
-          }
-          if (histout == 2 && resp < 10) {
-            console.log(this.histArrey[0][11]);
-            scoreGer--;
-            i++;
-          }
-        }
-
-        if (1 == 3) {
-          console.log(this.histArrey[0][6]);
-          histout = prompt();
-        }
-      }
-
-      while (i == 1) {
+      while (i == 0) {
         console.log(
           `O reforso Soviético esta há ${scoreSU} meses de distancia`
         );
@@ -331,7 +243,19 @@ Panzers à vista. 1 mantenham a infantaria em cheque. 2. Fogo dos morteiros`, //
         let scoreinGer = 0;
         let scoreinUs = 0;
         console.log(this.histArrey[1][0]), (histout = prompt());
+        console.log(scoreinGer);
+        console.log(scoreinUs);
+        if (scoreinGer == 3) {
+          console.log(this.histArrey[1][12]);
 
+          scoreGer--;
+          i++;
+        } else if (scoreinUs == 3) {
+          console.log(this.histArrey[1][13]);
+
+          scoreSU--;
+          i++;
+        }
         if (histout == 1) {
           console.log(this.histArrey[1][1]);
           (histin = prompt()), (respUS = this.dado());
@@ -443,17 +367,6 @@ Panzers à vista. 1 mantenham a infantaria em cheque. 2. Fogo dos morteiros`, //
             if (respUS < bonus) {
               scoreinGer++;
             }
-            if (scoreinGer == 3) {
-              console.log(this.histArrey[1][12]);
-
-              scoreGer--;
-              i++;
-            } else {
-              console.log(this.histArrey[1][13]);
-
-              scoreSU--;
-              i++;
-            }
           }
 
           if (histout2 == 2) {
@@ -467,19 +380,17 @@ Panzers à vista. 1 mantenham a infantaria em cheque. 2. Fogo dos morteiros`, //
             if (respUS > bonus) {
               console.log(this.histArrey[1][12]);
 
-              scoreSU--;
-              i++;
+              scoreinUs++;
             }
             if (respUS < bonus) {
               console.log(this.histArrey[1][13]);
 
-              scoreGer--;
-              i++;
+              scoreinGer++;
             }
           }
         }
       }
-      while (i == 2) {
+      while (i == 1) {
         console.log(
           `O reforso Soviético esta há ${scoreSU} meses de distancia`
         );
@@ -550,23 +461,23 @@ Panzers à vista. 1 mantenham a infantaria em cheque. 2. Fogo dos morteiros`, //
           }
         }
 
-        if (scoreinGer >= 2) {
+        if (scoreinGer > scoreinUs) {
           console.log(this.histArrey[2][7]);
           scoreGer--;
           i++;
         }
-        if (scoreinUs >= 1) {
+        if (scoreinUs > scoreinGer) {
           console.log(this.histArrey[2][6]);
           scoreSU--;
           i++;
         }
-        if (scoreinUs == 1 && scoreinGer == 1) {
+        if (scoreinUs == scoreinGer) {
           console.log(this.histArrey[2][7]);
           scoreGer--;
           i++;
         }
       }
-      while (i == 3) {
+      while (i == 2) {
         console.log(
           `O reforso Soviético esta há ${scoreSU} meses de distancia`
         );
@@ -672,14 +583,14 @@ Panzers à vista. 1 mantenham a infantaria em cheque. 2. Fogo dos morteiros`, //
 
           scoreGer--;
           i++;
-        } else {
+        } else if (scoreinUs == 3) {
           console.log(this.histArrey[3][8]);
 
           scoreSU--;
           i++;
         }
       }
-      while (i == 4) {
+      while (i == 3) {
         console.log(
           `O reforso Soviético esta há ${scoreSU} meses de distancia`
         );
@@ -832,7 +743,7 @@ Panzers à vista. 1 mantenham a infantaria em cheque. 2. Fogo dos morteiros`, //
           }
         }
       }
-      while (i == 5) {
+      while (i == 4) {
         console.log(
           `O reforso Soviético esta há ${scoreSU} meses de distancia`
         );
@@ -985,7 +896,7 @@ Panzers à vista. 1 mantenham a infantaria em cheque. 2. Fogo dos morteiros`, //
           }
         }
       }
-      while (i == 6) {
+      while (i == 5) {
         console.log(
           `O reforso Soviético esta há ${scoreSU} meses de distancia`
         );
