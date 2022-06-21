@@ -92,17 +92,16 @@ Panzers à vista. 1 mantenham a infantaria em cheque. 2. Fogo dos morteiros`, //
 1."Vou desligar os motores, ir abaixo dele e subir repentinamente nem vai me ver chegando" 2. "Tá na mira, vou alvejar daqui mesmo"`, //0
       ` "haha bem mais fácil" (+2 no ataque)`, //1
       `"haha facista maldito" (+3 no ataque)`, //2
-      "droga o maldito me percebeu agora ele tá atrás de mim", //3
-      ` "Maldito tá na hora da velha tática, vou diminuir os motores e planar, esses facistas adoram 
-      isso " 2. "Vou mudar o plano de ação, voando lateralmente quando ele se aproximar" `, //4
+      "droga o maldito me percebeu agora ele tá atrás de mim"` "Maldito tá na hora da velha tática, vou diminuir os motores e planar, esses facistas adoram 
+      isso " 2. "Vou mudar o plano de ação, voando lateralmente quando ele se aproximar" `, //3
       `"nunca falha essas 'maravilhas da engenharia alemã' nunca conseguem voar 
-      tão baixo estão devagar" (-4 para o alemão)`, //5
+      tão baixo estão devagar" (-4 para o alemão)`, //4
       `– Facista abatido Camarada Raisa.  soviéticos
       – Lydia isso foi imprudente!!
       – Me desculpa Camarada, ele tava bem no ponto.
       – Lydia, Lydia. Kroliova
       – nada a vista camarada
-      – certo, bombas no alvo!! (O reforço soviétivo está se preparando!)`, //6
+      – certo, bombas no alvo!! (O reforço soviétivo está se preparando!)`, //5
       ` – fui acertada, fui acertada, 
       – vamos camarada
       – Camarada mais deles se aproximando. 
@@ -245,17 +244,7 @@ Panzers à vista. 1 mantenham a infantaria em cheque. 2. Fogo dos morteiros`, //
         console.log(this.histArrey[1][0]), (histout = prompt());
         console.log(scoreinGer);
         console.log(scoreinUs);
-        if (scoreinGer == 3) {
-          console.log(this.histArrey[1][12]);
 
-          scoreGer--;
-          i++;
-        } else if (scoreinUs == 3) {
-          console.log(this.histArrey[1][13]);
-
-          scoreSU--;
-          i++;
-        }
         if (histout == 1) {
           console.log(this.histArrey[1][1]);
           (histin = prompt()), (respUS = this.dado());
@@ -333,6 +322,17 @@ Panzers à vista. 1 mantenham a infantaria em cheque. 2. Fogo dos morteiros`, //
             if (respUS < bonus) {
               scoreinGer++;
             }
+            if (scoreinGer > scoreinUs) {
+              console.log(this.histArrey[1][12]);
+
+              scoreGer--;
+              i++;
+            } else if (scoreinUs > scoreinGer) {
+              console.log(this.histArrey[1][13]);
+
+              scoreSU--;
+              i++;
+            }
           }
 
           if (histout2 == 2) {
@@ -348,6 +348,17 @@ Panzers à vista. 1 mantenham a infantaria em cheque. 2. Fogo dos morteiros`, //
             }
             if (respUS < bonus) {
               scoreinGer++;
+            }
+            if (scoreinGer > scoreinUs) {
+              console.log(this.histArrey[1][12]);
+
+              scoreGer--;
+              i++;
+            } else if (scoreinUs > scoreinGer) {
+              console.log(this.histArrey[1][13]);
+
+              scoreSU--;
+              i++;
             }
           }
         }
@@ -366,6 +377,17 @@ Panzers à vista. 1 mantenham a infantaria em cheque. 2. Fogo dos morteiros`, //
             }
             if (respUS < bonus) {
               scoreinGer++;
+            }
+            if (scoreinGer > scoreinUs) {
+              console.log(this.histArrey[1][12]);
+
+              scoreGer--;
+              i++;
+            } else if (scoreinUs > scoreinGer) {
+              console.log(this.histArrey[1][13]);
+
+              scoreSU--;
+              i++;
             }
           }
 
@@ -386,6 +408,17 @@ Panzers à vista. 1 mantenham a infantaria em cheque. 2. Fogo dos morteiros`, //
               console.log(this.histArrey[1][13]);
 
               scoreinGer++;
+            }
+            if (scoreinGer > scoreinUs) {
+              console.log(this.histArrey[1][12]);
+
+              scoreGer--;
+              i++;
+            } else if (scoreinUs > scoreinGer) {
+              console.log(this.histArrey[1][13]);
+
+              scoreSU--;
+              i++;
             }
           }
         }
@@ -443,6 +476,21 @@ Panzers à vista. 1 mantenham a infantaria em cheque. 2. Fogo dos morteiros`, //
           if (respUS < bonus) {
             scoreinGer++;
           }
+          if (scoreinGer > scoreinUs) {
+            console.log(this.histArrey[2][6]);
+            scoreGer--;
+            i++;
+          }
+          if (scoreinUs > scoreinGer) {
+            console.log(this.histArrey[2][5]);
+            scoreSU--;
+            i++;
+          }
+          if (scoreinUs == scoreinGer) {
+            console.log(this.histArrey[2][6]);
+            scoreGer--;
+            i++;
+          }
         }
 
         if (histout1 == 2) {
@@ -459,22 +507,21 @@ Panzers à vista. 1 mantenham a infantaria em cheque. 2. Fogo dos morteiros`, //
           if (respUS < bonus) {
             scoreinGer++;
           }
-        }
-
-        if (scoreinGer > scoreinUs) {
-          console.log(this.histArrey[2][7]);
-          scoreGer--;
-          i++;
-        }
-        if (scoreinUs > scoreinGer) {
-          console.log(this.histArrey[2][6]);
-          scoreSU--;
-          i++;
-        }
-        if (scoreinUs == scoreinGer) {
-          console.log(this.histArrey[2][7]);
-          scoreGer--;
-          i++;
+          if (scoreinGer > scoreinUs) {
+            console.log(this.histArrey[2][6]);
+            scoreGer--;
+            i++;
+          }
+          if (scoreinUs > scoreinGer) {
+            console.log(this.histArrey[2][5]);
+            scoreSU--;
+            i++;
+          }
+          if (scoreinUs == scoreinGer) {
+            console.log(this.histArrey[2][6]);
+            scoreGer--;
+            i++;
+          }
         }
       }
       while (i == 2) {
