@@ -92,7 +92,7 @@ Panzers à vista. 1 mantenham a infantaria em cheque. 2. Fogo dos morteiros`, //
 1."Vou desligar os motores, ir abaixo dele e subir repentinamente nem vai me ver chegando" 2. "Tá na mira, vou alvejar daqui mesmo"`, //0
       ` "haha bem mais fácil" (+2 no ataque)`, //1
       `"haha facista maldito" (+3 no ataque)`, //2
-      "droga o maldito me percebeu agora ele tá atrás de mim"` "Maldito tá na hora da velha tática, vou diminuir os motores e planar, esses facistas adoram 
+      `"droga o maldito me percebeu agora ele tá atrás de mim""Maldito tá na hora da velha tática, vou diminuir os motores e planar, esses facistas adoram 
       isso " 2. "Vou mudar o plano de ação, voando lateralmente quando ele se aproximar" `, //3
       `"nunca falha essas 'maravilhas da engenharia alemã' nunca conseguem voar 
       tão baixo estão devagar" (-4 para o alemão)`, //4
