@@ -967,15 +967,19 @@ Panzers à vista. 1 mantenham a infantaria em cheque. 2. Fogo dos morteiros`, //
               console.log(`Nosso ataque ${respUS}`);
             console.log(`Ataque inimigo ${bonus}`);
             if (respUS > bonus) {
-              console.log(this.histArrey[5][10]);
-
-              scoreSU--;
-              i++;
+              scoreinUs++;
             }
             if (respUS < bonus) {
-              console.log(this.histArrey[5][11]);
-
+              scoreinGer++;
+            }
+            if (scoreinGer > scoreinUs) {
+              console.log(this.histArrey[5][10]);
               scoreGer--;
+              i++;
+            }
+            if (scoreinUs > scoreinGer) {
+              console.log(this.histArrey[5][11]);
+              scoreSU--;
               i++;
             }
           }
