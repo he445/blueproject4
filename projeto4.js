@@ -895,6 +895,16 @@ Panzers à vista. 1 mantenham a infantaria em cheque. 2. Fogo dos morteiros`, //
             if (respUS < bonus) {
               scoreinGer++;
             }
+            if (scoreinGer > scoreinUs) {
+              console.log(this.histArrey[5][10]);
+              scoreGer--;
+              i++;
+            }
+            if (scoreinUs > scoreinGer) {
+              console.log(this.histArrey[5][11]);
+              scoreSU--;
+              i++;
+            }
           }
 
           if (histout2 == 2) {
@@ -910,6 +920,16 @@ Panzers à vista. 1 mantenham a infantaria em cheque. 2. Fogo dos morteiros`, //
             }
             if (respUS < bonus) {
               scoreinGer++;
+            }
+            if (scoreinGer > scoreinUs) {
+              console.log(this.histArrey[5][10]);
+              scoreGer--;
+              i++;
+            }
+            if (scoreinUs > scoreinGer) {
+              console.log(this.histArrey[5][11]);
+              scoreSU--;
+              i++;
             }
           }
         }
